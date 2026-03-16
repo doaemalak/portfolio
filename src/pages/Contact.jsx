@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react';
+import { ArrowUpRight, Download, Github, Linkedin, Mail, MessageSquare, QrCode, Send } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
+import { Badge } from '../components/ui/badge';
+import { Button } from '../components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import QRCode from 'qrcode';
 
 const Contact = () => {
   const [qrCode, setQrCode] = useState('');
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const { isDark } = useTheme();
 
-  // Générer le QR code au chargement
+  // Generate QR code based on active theme for better contrast.
   useEffect(() => {
-    const lienDestination = "http://localhost:5173/links"; // Remplace par ton lien Link-in-Bio
+    const lienDestination = `${window.location.origin}/links`;
 
     QRCode.toDataURL(lienDestination, {
       width: 128,
       margin: 2,
       color: {
-        dark: '#3b82f6',
-        light: '#ffffff'
+        dark: isDark ? '#ffffff' : '#3b82f6',
+        light: isDark ? '#1e293b' : '#ffffff'
       }
     })
     .then(url => {
@@ -23,7 +29,7 @@ const Contact = () => {
     .catch(err => {
       console.error('Erreur QR Code:', err);
     });
-  }, []);
+  }, [isDark]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,145 +37,153 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-24 pb-12">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Me Contacter</h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
-        </div>
+    <section className="relative min-h-screen bg-white dark:bg-slate-900 pt-24 pb-16 transition-colors duration-300 overflow-hidden">
+      <div className="pointer-events-none absolute -top-24 right-1/4 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 -left-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Formulaire de contact */}
-          <div className="card p-8 animate-slide-up">
-            <h3 className="text-2xl font-bold text-primary mb-6">Envoyer un message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-slate-700 mb-2 font-medium">Nom</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-slate-700 mb-2 font-medium">Email</label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-slate-700 mb-2 font-medium">Message</label>
-                <textarea
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
-                  rows="5"
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="btn-primary w-full">
-                Envoyer le message
-              </button>
-            </form>
-          </div>
-
-          {/* QR Code et Liens */}
-          <div className="card p-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <h3 className="text-2xl font-bold text-primary mb-6">Accès Rapide</h3>
-            
-            {/* QR Code */}
-            <div className="flex justify-center mb-8">
-              {qrCode ? (
-                <div className="relative">
-                  <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl animate-pulse-slow" />
-                  <img 
-                    src={qrCode} 
-                    alt="QR Code Portfolio" 
-                    className="relative rounded-lg shadow-lg border-4 border-white"
-                    width={128}
-                    height={128}
-                  />
-                </div>
-              ) : (
-                <div className="w-32 h-32 bg-slate-200 rounded-lg flex items-center justify-center">
-                  <span className="text-slate-500">Génération...</span>
-                </div>
-              )}
-            </div>
-            <p className="text-center text-slate-600 mb-6 text-sm">
-              Scannez pour accéder à mon CV, Portfolio et LinkedIn
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <header className="text-center mb-12 animate-in fade-in-0 slide-in-from-bottom-4 duration-700">
+            <Badge className="rounded-full bg-accent/15 text-accent hover:bg-accent/20">Contact</Badge>
+            <h2 className="mt-5 text-4xl md:text-6xl font-black text-slate-900 dark:text-white">Me Contacter</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-slate-600 dark:text-slate-300 leading-relaxed">
+              Une question, une opportunite de stage, ou un projet Data/IA a discuter ? Je reponds avec plaisir.
             </p>
+          </header>
 
-            {/* Liens */}
-            <div className="space-y-4">
-              <a 
-                href="/CV - Doae MalakAI.pdf" 
-                download
-                className="flex items-center justify-between p-4 bg-slate-100 rounded-lg hover:bg-accent hover:text-white transition-all duration-300 group"
-              >
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-accent group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <span className="font-semibold">Télécharger mon CV</span>
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-7 items-stretch">
+            <Card className="h-full border border-slate-200/80 dark:border-slate-700/70 bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 animate-in fade-in-0 slide-in-from-left-8 duration-700">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl text-slate-900 dark:text-white">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 text-accent">
+                    <MessageSquare className="h-5 w-5" />
+                  </span>
+                  Envoyer un message
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label className="block text-slate-700 dark:text-white mb-2 font-medium">Nom</label>
+                    <input
+                      type="text"
+                      className="w-full h-11 px-4 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-slate-700 dark:text-white mb-2 font-medium">Email</label>
+                    <input
+                      type="email"
+                      className="w-full h-11 px-4 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-slate-700 dark:text-white mb-2 font-medium">Message</label>
+                    <textarea
+                      className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
+                      rows="6"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  <Button type="submit" className="w-full rounded-xl bg-accent text-white hover:bg-accent/90">
+                    Envoyer le message
+                    <Send className="h-4 w-4 ml-2" />
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            <Card className="h-full border border-slate-200/80 dark:border-slate-700/70 bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 animate-in fade-in-0 slide-in-from-right-8 duration-700 [animation-delay:120ms]">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl text-slate-900 dark:text-white">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 text-accent">
+                    <QrCode className="h-5 w-5" />
+                  </span>
+                  Acces Rapide
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent>
+                <div className="flex justify-center mb-6">
+                  {qrCode ? (
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-2xl" />
+                      <img
+                        src={qrCode}
+                        alt="QR Code Portfolio"
+                        className="relative rounded-xl shadow-lg border-4 border-white dark:border-slate-700"
+                        width={150}
+                        height={150}
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-36 h-36 bg-slate-200 dark:bg-slate-700 rounded-xl flex items-center justify-center">
+                      <span className="text-slate-500 dark:text-slate-400">Generation...</span>
+                    </div>
+                  )}
                 </div>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
 
-              <a 
-                href="https://www.linkedin.com/in/doae-malak-719298297" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 bg-slate-100 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 group"
-              >
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-blue-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  <span className="font-semibold">Mon LinkedIn</span>
+                <p className="text-center text-slate-600 dark:text-slate-300 text-sm mb-6">
+                  Scannez pour acceder rapidement a mes liens professionnels.
+                </p>
+
+                <div className="space-y-3">
+                  <Button asChild variant="secondary" className="w-full justify-between rounded-xl h-11 bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 dark:bg-slate-700 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-accent dark:hover:text-white">
+                    <a href="/CV - Doae MalakAI.pdf" download>
+                      <span className="inline-flex items-center gap-2">
+                        <Download className="h-4 w-4" />
+                        Telecharger mon CV
+                      </span>
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </Button>
+
+                  <Button asChild variant="secondary" className="w-full justify-between rounded-xl h-11 bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 dark:bg-slate-700 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-accent dark:hover:text-white">
+                    <a href="https://www.linkedin.com/in/doae-malak-719298297" target="_blank" rel="noopener noreferrer">
+                      <span className="inline-flex items-center gap-2">
+                        <Linkedin className="h-4 w-4" />
+                        Mon LinkedIn
+                      </span>
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </Button>
+
+                  <Button asChild variant="secondary" className="w-full justify-between rounded-xl h-11 bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 dark:bg-slate-700 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-accent dark:hover:text-white">
+                    <a href="https://github.com/doaemalak" target="_blank" rel="noopener noreferrer">
+                      <span className="inline-flex items-center gap-2">
+                        <Github className="h-4 w-4" />
+                        Mon GitHub
+                      </span>
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
 
-              <a 
-                href="https://github.com/doaemalak" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 bg-slate-100 rounded-lg hover:bg-gray-800 hover:text-white transition-all duration-300 group"
-              >
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-gray-800 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                  <span className="font-semibold">Mon GitHub</span>
+                <div className="mt-7 pt-5 border-t border-slate-200 dark:border-slate-600 text-center">
+                  <p className="text-slate-600 dark:text-slate-300 mb-2">Ou contactez-moi directement :</p>
+                  <a href="mailto:douae.malak05@gmail.com" className="inline-flex items-center gap-2 text-accent hover:underline font-semibold">
+                    <Mail className="h-4 w-4" />
+                    douae.malak05@gmail.com
+                  </a>
                 </div>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-
-            {/* Email */}
-            <div className="mt-8 pt-6 border-t border-slate-200">
-              <p className="text-center text-slate-600 mb-2">Ou contactez-moi directement :</p>
-              <a href="mailto:douae.malak05@gmail.com" className="text-accent hover:underline font-semibold">
-                douae.malak05@gmail.com
-              </a>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -4,15 +4,28 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: '#0f172a',
-        secondary: '#1e293b',
+        // Light mode colors
+        primary: {
+          light: '#ffffff',
+          dark: '#0f172a',
+        },
+        secondary: {
+          light: '#f8fafc',
+          dark: '#1e293b',
+        },
         accent: '#3b82f6',
         accentHover: '#2563eb',
         success: '#10b981',
         warning: '#f59e0b',
+        // Text colors
+        text: {
+          light: '#1e293b',
+          dark: '#f1f5f9',
+        },
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
