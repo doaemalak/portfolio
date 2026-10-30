@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doae Malak Moumen — Data Science, IA &amp; Full-stack</title>
+  <meta name="description" content="Portfolio de Doae Malak Moumen, étudiante ingénieure en Data Science & Intelligence Artificielle et développeuse Full-stack." />
+
+  <!-- Aperçu du lien lors d'un partage (LinkedIn, WhatsApp…) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://doaemalak.github.io/" />
+  <meta property="og:title" content="Doae Malak Moumen — Data Science, IA &amp; Full-stack" />
+  <meta property="og:description" content="Étudiante ingénieure en Data Science & IA : Deep Learning, agents IA (RAG) et applications web. Projets, compétences et CV." />
+  <link rel="canonical" href="https://doaemalak.github.io/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Décor de fond : grille + halos violets -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#accueil" class="logo">Doae Malak<span class="logo__tag">&lt;/&gt;</span></a>
+
+      <button class="nav__toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu">
+        <li><a href="#accueil" class="nav__link is-active">Accueil</a></li>
+        <li><a href="#a-propos" class="nav__link">À propos</a></li>
+        <li><a href="#competences" class="nav__link">Compétences</a></li>
+        <li><a href="#projets" class="nav__link">Projets</a></li>
+        <li><a href="#certifications" class="nav__link">Certifications</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section id="accueil" class="hero section">
+      <div class="container hero__inner">
+
+        <div class="hero__content">
+          <p class="hero__eyebrow"><span class="dot-live"></span> Disponible pour un stage</p>
+          <h1 class="hero__title">Hi, I'm <span class="text-neon">Doae Malak</span> Moumen</h1>
+          <h2 class="hero__subtitle">Développeuse <span class="text-gradient">Full-stack</span></h2>
+          <p class="hero__role">Data Science &amp; Intelligence Artificielle</p>
+          <p class="hero__text">
+            Étudiante ingénieure passionnée par l'IA générative et les architectures robustes.
+            Je conçois des solutions qui transforment la donnée en intelligence : modèles de
+            Machine Learning et de Deep Learning, agents IA (RAG, LLM locaux) et applications web complètes.
+          </p>
+
+          <div class="hero__actions">
+            <a href="assets/CV_Doae_Malak_Moumen.pdf" class="btn btn--primary" download="CV_Doae_Malak_Moumen.pdf">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" /></svg>
+              Télécharger le CV
+            </a>
+            <a href="#projets" class="btn btn--ghost">Voir mes projets</a>
+          </div>
+
+          <ul class="socials">
+            <li><a href="https://github.com/doaemalak" class="social" aria-label="GitHub" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+            </a></li>
+            <li><a href="https://www.linkedin.com/in/doae-malak-719298297" class="social" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5Z"/></svg>
+            </a></li>
+            <li><a href="mailto:douae.malak05@gmail.com" class="social" aria-label="E-mail">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 7l9 6 9-6" /></svg>
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- Visuel : photo circulaire + halo + logos flottants -->
+        <div class="hero__visual">
+          <div class="orbit" aria-hidden="true"></div>
+          <div class="orbit orbit--outer" aria-hidden="true"></div>
+
+          <div class="avatar avatar--hero">
+            <img src="assets/profile.svg" alt="Photo de profil de Doae Malak Moumen" />
+          </div>
+
+          <span class="tech-float tech-float--1" title="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /></span>
+          <span class="tech-float tech-float--2" title="TensorFlow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" /></span>
+          <span class="tech-float tech-float--3" title="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" /></span>
+          <span class="tech-float tech-float--4" title="Laravel"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" /></span>
+          <span class="tech-float tech-float--5" title="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /></span>
+          <span class="tech-float tech-float--6" title="Scikit-learn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" /></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section id="a-propos" class="about section">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__kicker">// Qui suis-je</span>
+          <h2 class="section__title">À propos de <span class="text-neon">moi</span></h2>
+        </header>
+
+        <div class="about__inner">
+          <div class="about__photo">
+            <div class="avatar avatar--about">
+              <img src="assets/profile.svg" alt="Portrait de Doae Malak Moumen" />
+            </div>
+            <div class="about__badge">
+              <strong>6</strong>
+              <span>projets<br />réalisés</span>
+            </div>
+          </div>
+
+          <div class="about__content">
+            <p class="about__text">
+              Je suis <strong>Doae Malak Moumen</strong>, étudiante en Ingénierie Informatique et Réseaux à
+              l'EMSI, spécialisée en <strong>Data Science &amp; Intelligence Artificielle</strong>. Je maîtrise
+              le cycle complet de la donnée, de l'analyse statistique au déploiement de modèles de
+              Machine Learning et de Deep Learning.
+            </p>
+            <p class="about__text">
+              Je combine la rigueur du développement full-stack avec la puissance de l'IA générative :
+              conception d'agents intelligents (RAG, LLM locaux) et de solutions logicielles robustes.
+              Je recherche un stage stimulant pour appliquer mes compétences à des problématiques
+              complexes de Data Science.
+            </p>
+
+            <ul class="about__cards">
+              <li class="skill-card">
+                <span class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6" /></svg>
+                </span>
+                <div>
+                  <h3 class="skill-card__title">Data Science</h3>
+                  <p class="skill-card__text">ML, Deep Learning, NLP</p>
+                </div>
+              </li>
+              <li class="skill-card">
+                <span class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M12 3v3M6 6h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2ZM9 12h.01M15 12h.01M9 16h6" /></svg>
+                </span>
+                <div>
+                  <h3 class="skill-card__title">IA générative</h3>
+                  <p class="skill-card__text">Agents IA, RAG, Ollama</p>
+                </div>
+              </li>
+              <li class="skill-card">
+                <span class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14" /></svg>
+                </span>
+                <div>
+                  <h3 class="skill-card__title">Full-stack</h3>
+                  <p class="skill-card__text">React, Laravel, .NET</p>
+                </div>
+              </li>
+              <li class="skill-card">
+                <span class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Zm0 0v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></svg>
+                </span>
+                <div>
+                  <h3 class="skill-card__title">Données &amp; DevOps</h3>
+                  <p class="skill-card__text">SQL, NoSQL, Docker, Git</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Parcours : expérience + formation (issus du CV) -->
+        <div class="journey">
+          <div class="journey__col">
+            <h3 class="journey__title">Expérience</h3>
+            <ol class="timeline">
+              <li class="timeline__item">
+                <span class="timeline__date">Juil. – Août 2025</span>
+                <h4 class="timeline__heading">Stage IA — Développement d'agents intelligents</h4>
+                <p class="timeline__place">UM6P / AI Movement · Campus Rabat</p>
+                <p class="timeline__text">Outil d'IA générative hors ligne pour générer des hypothèses de recherche : pipeline multi-agents avec RAG (ChromaDB) et LLM locaux via Ollama pour garantir la confidentialité des données.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="journey__col">
+            <h3 class="journey__title">Formation</h3>
+            <ol class="timeline">
+              <li class="timeline__item">
+                <span class="timeline__date">2022 – 2027</span>
+                <h4 class="timeline__heading">Diplôme d'Ingénieur en Informatique et Réseaux</h4>
+                <p class="timeline__place">École Marocaine des Sciences de l'Ingénieur (EMSI)</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__date">2021 – 2022</span>
+                <h4 class="timeline__heading">Baccalauréat scientifique</h4>
+                <p class="timeline__place">Option physique et chimie</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <ul class="chips" aria-label="Soft skills">
+          <li class="chip">Résolution de problèmes complexes</li>
+          <li class="chip">Veille technologique (IA &amp; Dev)</li>
+          <li class="chip">Travail en équipe &amp; Agile</li>
+          <li class="chip">Communication technique</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section id="competences" class="skills section">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__kicker">// Ma stack</span>
+          <h2 class="section__title">Mes <span class="text-neon">compétences</span></h2>
+        </header>
+
+        <!-- data-level : nombre de points allumés sur 10 (généré par script.js) -->
+        <div class="skills__grid">
+          <div class="skills__group">
+            <h3 class="skills__group-title">Langages &amp; frameworks</h3>
+            <ul class="skills__list">
+              <li class="skill" data-level="9">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" />
+                <span class="skill__name">Python (Django)</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" />
+                <span class="skill__name">Java</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" />
+                <span class="skill__name">C# / .NET</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="8">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="" />
+                <span class="skill__name">PHP (Laravel)</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="8">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" />
+                <span class="skill__name">React / JavaScript</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" />
+                <span class="skill__name">C / C++</span>
+                <span class="skill__dots"></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">IA &amp; Data Science</h3>
+            <ul class="skills__list">
+              <li class="skill" data-level="8">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="" />
+                <span class="skill__name">Machine Learning</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="8">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="" />
+                <span class="skill__name">Deep Learning (TensorFlow)</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="8">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="" />
+                <span class="skill__name">NumPy / Pandas</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="8">
+                <span class="skill__logo skill__logo--glyph" aria-hidden="true">RAG</span>
+                <span class="skill__name">RAG / LangChain</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="8">
+                <span class="skill__logo skill__logo--glyph" aria-hidden="true">AI</span>
+                <span class="skill__name">Agents IA / Ollama</span>
+                <span class="skill__dots"></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Bases de données</h3>
+            <ul class="skills__list">
+              <li class="skill" data-level="8">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" />
+                <span class="skill__name">MySQL</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" />
+                <span class="skill__name">PostgreSQL</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" />
+                <span class="skill__name">MongoDB / NoSQL</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="" />
+                <span class="skill__name">PL/SQL / T-SQL</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <span class="skill__logo skill__logo--glyph" aria-hidden="true">VEC</span>
+                <span class="skill__name">ChromaDB / Qdrant</span>
+                <span class="skill__dots"></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Outils &amp; DevOps</h3>
+            <ul class="skills__list">
+              <li class="skill" data-level="9">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" />
+                <span class="skill__name">Git / GitHub</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" />
+                <span class="skill__name">Docker</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <img class="skill__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="" />
+                <span class="skill__name">Linux / Unix</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="8">
+                <span class="skill__logo skill__logo--glyph" aria-hidden="true">API</span>
+                <span class="skill__name">API REST</span>
+                <span class="skill__dots"></span>
+              </li>
+              <li class="skill" data-level="7">
+                <span class="skill__logo skill__logo--glyph" aria-hidden="true">n8n</span>
+                <span class="skill__name">n8n (automatisation)</span>
+                <span class="skill__dots"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section id="projets" class="projects section">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__kicker">// Réalisations</span>
+          <h2 class="section__title">Mes <span class="text-neon">projets</span></h2>
+        </header>
+
+        <!-- data-category peut contenir plusieurs catégories séparées par un espace -->
+        <div class="filters" role="tablist" aria-label="Filtrer les projets">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Tous</button>
+          <button class="filter" data-filter="ia" role="tab" aria-selected="false">Deep Learning &amp; Data</button>
+          <button class="filter" data-filter="agents" role="tab" aria-selected="false">IA générative &amp; Agents</button>
+          <button class="filter" data-filter="web" role="tab" aria-selected="false">Application Web</button>
+        </div>
+
+        <div class="projects__grid">
+          <article class="project-card" data-category="agents">
+            <div class="project-card__thumb project-card__thumb--1">
+              <span class="project-card__tag">Stage UM6P</span>
+              <span class="project-card__glyph">RAG</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">IA : Générateur d'hypothèses (RAG)</h3>
+              <p class="project-card__text">Outil d'IA générative hors ligne pour la recherche scientifique : pipeline multi-agents avec RAG pour générer et valider des hypothèses à partir de documents.</p>
+              <ul class="project-card__stack"><li>Python</li><li>Ollama</li><li>ChromaDB</li><li>LangChain</li></ul>
+              <div class="project-card__actions">
+                <a href="https://github.com/doaemalak" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Dépôt</a>
+                <button type="button" class="btn btn--small btn--primary js-demo" data-video="assets/videos/rag-hypotheses.mp4"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5-12-7.5Z" /></svg> Démo</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="agents web">
+            <div class="project-card__thumb project-card__thumb--2">
+              <span class="project-card__tag">SMA</span>
+              <span class="project-card__glyph">{ }</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Mentor Clean Code (SMA)</h3>
+              <p class="project-card__text">Tuteur IA pour la qualité logicielle : pipeline multi-agents orchestré via n8n, méthode socratique et RAG sur <em>Clean Code</em> (Qdrant) pour des feedbacks contextuels.</p>
+              <ul class="project-card__stack"><li>Python</li><li>Multi-Agents</li><li>n8n</li><li>Qdrant</li></ul>
+              <div class="project-card__actions">
+                <a href="https://github.com/doaemalak/mentor-clean-code-sma" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Dépôt</a>
+                <button type="button" class="btn btn--small btn--primary js-demo" data-video="assets/videos/mentor-clean-code.mp4"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5-12-7.5Z" /></svg> Démo</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ia web">
+            <div class="project-card__thumb project-card__thumb--3">
+              <span class="project-card__tag">PFA 2</span>
+              <span class="project-card__glyph">U-Net</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Segmentation de tumeurs cérébrales</h3>
+              <p class="project-card__text">Application de segmentation automatique d'IRM : modèle U-Net entraîné sur BraTS 2021, masques de segmentation et overlays probabilistes pour l'aide au diagnostic.</p>
+              <ul class="project-card__stack"><li>Python</li><li>TensorFlow</li><li>OpenCV</li><li>Deep Learning</li></ul>
+              <div class="project-card__actions">
+                <a href="https://github.com/doaemalak/Application-de-segmentation-de-tumeurs-c-r-brales-pfa2-" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Dépôt</a>
+                <button type="button" class="btn btn--small btn--primary js-demo" data-video="assets/videos/segmentation-tumeurs.mp4"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5-12-7.5Z" /></svg> Démo</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ia">
+            <div class="project-card__thumb project-card__thumb--4">
+              <span class="project-card__tag">Deep Learning</span>
+              <span class="project-card__glyph">CNN</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Brain Tumor Detector</h3>
+              <p class="project-card__text">Classification d'images IRM par réseau de neurones convolutif, avec prétraitement (normalisation, augmentation) et analyse des performances (matrice de confusion, ROC).</p>
+              <ul class="project-card__stack"><li>Python</li><li>CNN</li><li>Keras</li><li>Computer Vision</li></ul>
+              <div class="project-card__actions">
+                <a href="https://github.com/doaemalak/Brain-Tumor-Detector" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Dépôt</a>
+                <button type="button" class="btn btn--small btn--primary js-demo" data-video="assets/videos/brain-tumor-detector.mp4"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5-12-7.5Z" /></svg> Démo</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="web">
+            <div class="project-card__thumb project-card__thumb--5">
+              <span class="project-card__tag">PFA 1</span>
+              <span class="project-card__glyph">MVC</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Gestion de stock &amp; entreprises</h3>
+              <p class="project-card__text">Application web full-stack pour gérer stocks, fournisseurs et commandes : architecture MVC, rapports automatisés et suivi des entrées/sorties en temps réel.</p>
+              <ul class="project-card__stack"><li>Laravel</li><li>React</li><li>MySQL</li><li>REST API</li></ul>
+              <div class="project-card__actions">
+                <a href="https://github.com/doaemalak/Gestion-de-stock-pfa1-" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Dépôt</a>
+                <button type="button" class="btn btn--small btn--primary js-demo" data-video="assets/videos/gestion-de-stock.mp4"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5-12-7.5Z" /></svg> Démo</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ia">
+            <div class="project-card__thumb project-card__thumb--6">
+              <span class="project-card__tag">NLP</span>
+              <span class="project-card__glyph">NLP</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Analyse sémantique — Yelp Polarity</h3>
+              <p class="project-card__text">Pipeline complet d'analyse de sentiments : prétraitement textuel, extraction de features TF-IDF et comparaison de plusieurs algorithmes de classification.</p>
+              <ul class="project-card__stack"><li>Python</li><li>NLP</li><li>Data Mining</li><li>Scikit-learn</li></ul>
+              <div class="project-card__actions">
+                <a href="https://github.com/doaemalak/analyse-de-sentiments-Yelp-Polarity-data-mining-" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Dépôt</a>
+                <button type="button" class="btn btn--small btn--primary js-demo" data-video="assets/videos/yelp-sentiments.mp4"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5-12-7.5Z" /></svg> Démo</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications" class="certs section">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__kicker">// Formation continue</span>
+          <h2 class="section__title">Mes <span class="text-neon">certifications</span></h2>
+        </header>
+
+        <div class="certs__list">
+          <article class="cert-card">
+            <span class="cert-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm-3.5 4.5L8 22l4-2 4 2-.5-2.5M8.2 13.8 7 21M15.8 13.8 17 21" /></svg>
+            </span>
+            <div class="cert-card__body">
+              <h3 class="cert-card__title">Python for Data Science, AI &amp; Development</h3>
+              <p class="cert-card__meta">IBM · Coursera · 25 avril 2025</p>
+            </div>
+            <a href="https://coursera.org/verify/SZVVAMSZZFTX" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Voir le certificat</a>
+          </article>
+
+          <article class="cert-card">
+            <span class="cert-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm-3.5 4.5L8 22l4-2 4 2-.5-2.5M8.2 13.8 7 21M15.8 13.8 17 21" /></svg>
+            </span>
+            <div class="cert-card__body">
+              <h3 class="cert-card__title">Software Engineering: Software Design and Project Management</h3>
+              <p class="cert-card__meta">The Hong Kong University of Science and Technology · Coursera · 23 mars 2025</p>
+            </div>
+            <a href="https://coursera.org/verify/302TSABNXAZR" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Voir le certificat</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__kicker">// Parlons-en</span>
+          <h2 class="section__title"><span class="text-neon">Contact</span></h2>
+          <p class="section__lead">Une offre de stage, un projet ou une question ? Écrivez-moi à
+            <a href="mailto:douae.malak05@gmail.com" class="link-neon">douae.malak05@gmail.com</a>.</p>
+        </header>
+
+        <!-- Le formulaire ouvre la messagerie de l'utilisateur avec le message pré-rempli (voir script.js) -->
+        <form class="contact__form" action="mailto:douae.malak05@gmail.com" method="post" enctype="text/plain">
+          <div class="form__row">
+            <div class="form__field">
+              <label for="name" class="form__label">Nom</label>
+              <input id="name" name="name" type="text" class="form__input" placeholder="Votre nom" required autocomplete="name" />
+            </div>
+            <div class="form__field">
+              <label for="email" class="form__label">E-mail</label>
+              <input id="email" name="email" type="email" class="form__input" placeholder="vous@exemple.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="message" class="form__label">Message</label>
+            <textarea id="message" name="message" rows="6" class="form__input form__textarea" placeholder="Parlez-moi de votre projet ou de votre offre…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">
+            Envoyer un message
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-4 16-4-7-8-1Z" /></svg>
+          </button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="docs">
+          <a href="assets/CV_Doae_Malak_Moumen.pdf" class="btn btn--ghost" download="CV_Doae_Malak_Moumen.pdf">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" /></svg>
+            Mon CV
+          </a>
+          <a href="assets/lettre_motivation_Doae_Malak_Moumen.pdf" class="btn btn--ghost" download>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" /></svg>
+            Lettre de motivation
+          </a>
+        </div>
+
+        <ul class="socials socials--center">
+          <li><a href="https://github.com/doaemalak" class="social" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+          </a></li>
+          <li><a href="https://www.linkedin.com/in/doae-malak-719298297" class="social" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5Z"/></svg>
+          </a></li>
+          <li><a href="mailto:douae.malak05@gmail.com" class="social" aria-label="E-mail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 7l9 6 9-6" /></svg>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#accueil" class="logo">Doae Malak<span class="logo__tag">&lt;/&gt;</span></a>
+      <ul class="footer__menu">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer__copy">© <span id="year">2026</span> Doae Malak Moumen. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ============ LECTEUR DE DÉMO ============ -->
+  <!-- Les vidéos sont dans assets/videos/ (nom défini par data-video sur chaque bouton « Démo ») -->
+  <dialog class="demo-modal" aria-labelledby="demo-title">
+    <div class="demo-modal__box">
+      <header class="demo-modal__head">
+        <h3 id="demo-title" class="demo-modal__title">Démo</h3>
+        <button type="button" class="demo-modal__close" aria-label="Fermer la démo">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        </button>
+      </header>
+      <div class="demo-modal__media">
+        <video class="demo-modal__video" controls playsinline preload="metadata"></video>
+        <div class="demo-modal__fallback" hidden>
+          <span class="demo-modal__fallback-icon" aria-hidden="true">▶</span>
+          <p class="demo-modal__fallback-title">Démo vidéo en préparation</p>
+          <p class="demo-modal__fallback-text">En attendant, le code source et la documentation sont disponibles sur GitHub.</p>
+          <a href="#" class="btn btn--small btn--primary demo-modal__repo" target="_blank" rel="noopener">Voir le dépôt</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

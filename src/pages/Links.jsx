@@ -13,7 +13,7 @@ const Links = () => {
         <div className="space-y-4">
           {/* Lien CV */}
           <a 
-           href="/CV - Doae MalakAI.pdf" 
+           href="/CV - Doae Malak.pdf" 
            download="CV_Doae_Malak.pdf" 
            className="block w-full bg-white/20 hover:bg-white/30 text-white py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
           >
@@ -21,6 +21,18 @@ const Links = () => {
            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
            </svg>
            <span className="font-semibold">Télécharger mon CV</span>
+          </a>
+
+          {/* Lien Lettre de motivation */}
+          <a
+           href="/lettre_motivation_Doae_Malak_Moumen.pdf"
+           download="lettre_motivation_Doae_Malak_Moumen.pdf"
+           className="block w-full bg-white/20 hover:bg-white/30 text-white py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+          >
+           <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+           </svg>
+           <span className="font-semibold">Télécharger ma lettre de motivation</span>
           </a>
 
           {/* Lien Portfolio */}

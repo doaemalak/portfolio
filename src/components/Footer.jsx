@@ -2,34 +2,43 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white py-12">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-navy dark:bg-dark-surface border-t border-white/5 dark:border-dark-border text-white py-14 transition-colors duration-300">
+      <div className="max-w-5xl mx-auto px-8">
+        <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
-            <h3 className="text-2xl font-bold gradient-text mb-4">Doae Malak</h3>
-            <p className="text-slate-400">
-              Ingénieure Data Science & Intelligence Artificielle
+            <p className="text-lg font-bold mb-2">DM<span className="text-accent">.</span></p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Ingénieure Data Science<br />& Intelligence Artificielle
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4">Liens Rapides</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">Navigation</h4>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-slate-400 hover:text-accent transition">À Propos</Link></li>
-              <li><Link to="/projects" className="text-slate-400 hover:text-accent transition">Projets</Link></li>
-              <li><Link to="/skills" className="text-slate-400 hover:text-accent transition">Compétences</Link></li>
+              {[
+                { to: '/about', label: 'À Propos' },
+                { to: '/projects', label: 'Projets' },
+                { to: '/skills', label: 'Compétences' },
+                { to: '/certifications', label: 'Certifications' },
+              ].map(({ to, label }) => (
+                <li key={to}>
+                  <Link to={to} className="text-slate-400 hover:text-white text-sm transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-slate-400">
-              <li>douae.malak05@gmail.com</li>
-              <li>LinkedIn: Doae Malak</li>
-              <li>GitHub: @doaemalak</li>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">Contact</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="mailto:douae.malak05@gmail.com" className="text-slate-400 hover:text-white transition-colors">douae.malak05@gmail.com</a></li>
+              <li><a href="https://www.linkedin.com/in/doae-malak-719298297" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href="https://github.com/doaemalak" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">GitHub</a></li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-slate-700 pt-8 text-center text-slate-400">
-          <p>© 2024 Doae Malak Moumen. Tous droits réservés.</p>
+        <div className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs">
+          © 2024 Doae Malak Moumen — Tous droits réservés.
         </div>
       </div>
     </footer>

@@ -1,19 +1,32 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-primary: #0f172a;
-  --color-secondary: #1e293b;
-  --color-accent: #3b82f6;
-  --color-accentHover: #2563eb;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  
-  --animate-fade-in: fadeIn 0.5s ease-in-out;
-  --animate-slide-up: slideUp 0.5s ease-out;
-  --animate-slide-in: slideIn 0.5s ease-out;
-  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  
-  --keyframe-fadeIn: fadeIn;
+  --color-primary:     #0F172A;
+  --color-secondary:   #1E293B;
+  --color-surface:     #FFFFFF;
+  --color-bg:          #F8FAFC;
+  --color-muted:       #64748B;
+  --color-border:      #E2E8F0;
+  --color-dark-bg:     #0A0F1E;
+  --color-dark-surface:#111827;
+  --color-dark-card:   #1A2235;
+  --color-dark-border: #1F2D45;
+  --color-dark-muted:  #6B7280;
+  --color-accent:      #2563EB;
+  --color-accentHover: #1D4ED8;
+  --color-accentLight: #EFF6FF;
+  --color-success:     #059669;
+  --color-navy:        #0F172A;
+
+  --animate-fade-in:    fadeIn 0.6s ease-out both;
+  --animate-slide-up:   slideUp 0.6s ease-out both;
+  --animate-slide-in:   slideIn 0.6s ease-out both;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  --keyframe-fadeIn:  fadeIn;
   --keyframe-slideUp: slideUp;
   --keyframe-slideIn: slideIn;
 }
@@ -21,26 +34,67 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv11", "ss01";
   }
+
+  /* Light mode defaults */
   body {
-    @apply bg-slate-50 text-slate-900;
+    @apply bg-bg text-secondary transition-colors duration-300;
+  }
+
+  /* Dark mode overrides on <html class="dark"> */
+  .dark body {
+    background-color: #0A0F1E;
+    color: #CBD5E1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
   }
 }
 
 @layer components {
+  /* Buttons */
   .btn-primary {
-    @apply bg-accent hover:bg-accentHover text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply inline-flex items-center justify-center gap-2 bg-accent hover:bg-accentHover text-white font-medium py-2.5 px-5 rounded-lg transition-all duration-200 text-sm shadow-sm hover:shadow-md;
   }
   .btn-secondary {
-    @apply bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 bg-white dark:bg-dark-card hover:bg-slate-50 dark:hover:bg-dark-border text-secondary dark:text-slate-300 font-medium py-2.5 px-5 rounded-lg transition-all duration-200 border border-border dark:border-dark-border text-sm;
   }
+
+  /* Cards */
   .card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100;
+    @apply bg-surface dark:bg-dark-card rounded-xl border border-border dark:border-dark-border transition-all duration-200 hover:shadow-md dark:hover:shadow-dark-border/50;
   }
+  .card-glass {
+    @apply bg-white/60 dark:bg-dark-card/60 backdrop-blur-md rounded-xl border border-white/80 dark:border-dark-border transition-all duration-200 hover:shadow-md;
+  }
+
+  /* Tags */
+  .tag {
+    @apply bg-accentLight dark:bg-accent/10 text-accent dark:text-blue-400 text-xs font-medium px-2.5 py-1 rounded-md border border-accent/10 dark:border-accent/20;
+  }
+
+  /* Section headers */
+  .section-eyebrow {
+    @apply text-accent text-xs font-semibold uppercase tracking-widest mb-3;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary dark:text-white mb-3 tracking-tight;
+  }
+  .section-divider {
+    @apply w-10 h-0.5 bg-accent mx-auto mt-4 mb-16;
+  }
+
+  /* Gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-accent to-purple-600 bg-clip-text text-transparent;
-  }
-  .glass-effect {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+    @apply bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent;
   }
 }
+
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slideIn { from { transform: translateX(-16px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
